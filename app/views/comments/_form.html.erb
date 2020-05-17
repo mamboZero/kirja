@@ -1,0 +1,13 @@
+
+<%= simple_form_for([@followup, @followup.comments.build]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :commentar,:label => "Ruang komen", :input_html => {:cols =>40,:rows => 5}, class: "form-control" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Nak komen?", class: "btn-sm btn-success" %>
+  </div>
+<% end %>

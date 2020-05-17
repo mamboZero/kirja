@@ -1,0 +1,83 @@
+
+<div class="container">
+  <div class="jumbotron " style="background-image: url(https://image.freepik.com/free-vector/green-shapes-green-background_23-2148358212.jpg); background-size: cover" >
+    <div class="row justify-content-center  ">
+      <div class="col-6 text-center" style="color:#fff">
+             <h1><%= @followup.project_name %></h1> 
+    </div>
+    
+    </div>
+    
+  
+</div>
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-sm-12">  
+      <p>
+        <strong>Status:</strong>
+        <%= @followup.status.downcase %>
+      </p>
+
+      <p>
+        <strong>Project name:</strong>
+        <%= @followup.project_name %>
+      </p>
+
+      <p>
+        <strong>Contact name:</strong>
+        <%= @followup.contact_name %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= @followup.email %>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <%= @followup.phone %>
+      </p>
+
+      <p>
+        <strong>Contact date:</strong>
+        <%= @followup.contact_date %>
+      </p>
+
+      <p>
+        <strong>Followup date:</strong>
+        <%= @followup.followup_date %>
+      </p>
+
+      <p>
+        <strong>Notes:</strong>
+        <%= @followup.notes %>
+      </p>
+          <% if user_signed_in? && current_user %>
+            <%= link_to 'Edit', edit_followup_path(@followup), class: "btn-sm btn-info" %> |
+            <%= link_to 'Back', followups_path, class: "btn-sm btn-warning" %>
+          <% else %>
+            <%= link_to 'Back', root_path, class: "btn-sm btn-warning" %>
+          <% end %>
+    </div><!-- md-8 -->
+    <div class="col-md-4 col-sm-12">
+      <p>
+      <%= @followup.comments.count %> comment(s)
+      </p>
+
+
+<% @followup.comments.each do |comment| %>
+  <p><strong><%= comment.commentar %></strong></p>
+  <p><small><%=time_ago_in_words(comment.created_at)%></small></p>
+<% end %>
+
+
+
+<div>
+  <h4>Ada Komen ke boss?</h4>
+<%= render 'comments/form' %>
+</div>
+    </div><!-- md-4 -->
+  </div> 
+</div>
+
+
+
