@@ -58,3 +58,4 @@ gem 'simple_form'
 
 gem 'devise'
 
+gem 'will_paginate', '~> 3.1.0'
