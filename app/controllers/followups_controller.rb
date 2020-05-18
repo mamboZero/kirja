@@ -5,7 +5,8 @@ class FollowupsController < ApplicationController
   # GET /followups
   # GET /followups.json
   def index
-    @followups = Followup..paginate(page: params[:page], per_page: 5)
+    @followups = Followup.all
+
 
   end
 
