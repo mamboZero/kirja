@@ -60,15 +60,13 @@
     </div><!-- md-8 -->
     <div class="col-md-4 col-sm-12">
       <p>
-      <%= @followup.comments.count %> comment(s)
+      <!-- <%= @followup.comments.count %> comment(s) -->
       </p>
 
 
-<% @followup.comments.each do |comment| %>
+<% @followup.comments.limit(2).each do |comment| %>
   <p><strong><%= comment.commentar %></strong></p>
   <p><small><%=time_ago_in_words(comment.created_at)%></small></p>
-  
-
 <% end %>
 
 
