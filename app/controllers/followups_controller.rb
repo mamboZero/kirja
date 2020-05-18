@@ -6,8 +6,6 @@ class FollowupsController < ApplicationController
   # GET /followups.json
   def index
     @followups = Followup.all
-
-
   end
 
   # GET /followups/1

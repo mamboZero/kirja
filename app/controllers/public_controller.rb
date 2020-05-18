@@ -7,7 +7,7 @@ class PublicController < ApplicationController
   private
 
   def load_followup
-    @followup = Followup.paginate(page: params[:page], per_page: 5)
+    @followups = Followup.paginate(page: params[:page], per_page: 5)
   end
 
 end
