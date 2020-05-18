@@ -58,26 +58,8 @@
             <%= link_to 'Back', root_path, class: "btn-sm btn-warning" %>
           <% end %>
     </div><!-- md-8 -->
-    <div class="col-md-4 col-sm-12">
-      <p>
-      <!-- <%= @followup.comments.count %> comment(s) -->
-      </p>
-
-
-<% @followup.comments.limit(2).each do |comment| %>
-  <p><strong><%= comment.commentar %></strong></p>
-  <p><small><%=time_ago_in_words(comment.created_at)%></small></p>
-<% end %>
-
-
-
-<div>
-  <h4>Ada Komen ke boss?</h4>
-<%= render 'comments/form' %>
-</div>
-    </div><!-- md-4 -->
-  </div> 
-</div>
+    
+    <%= render "comments/comments" %>
 
 
 
